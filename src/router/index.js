@@ -41,7 +41,7 @@ const routes = [
   },
   {
     // Test Purpose, Deleter later
-    path: '/Signup',
+    path: '/signup',
     name: 'ลงทะเบียน',
     component: () => import('../views/Signup.vue')
   },

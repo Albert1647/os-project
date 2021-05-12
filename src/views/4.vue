@@ -8,12 +8,12 @@
           <v-row class="d-flex align-center">
             <v-list>
               <v-list-item-avatar size="80">
-                <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
+                <v-img :src="userDetail.profilePicture"></v-img>
               </v-list-item-avatar>
             </v-list>
 
             <v-col>
-              <h1>WOWWOW</h1>
+              <h1>{{ userDetail.name }}</h1>
             </v-col>
           </v-row>
 
@@ -50,14 +50,14 @@
             ><v-card-title>สนับสนุนค่าขนมของเราได้ที่นี่</v-card-title></v-row
           >
           <v-row class="py-4 align-center">
-            <v-col> <h3>/ ชั่วโมง</h3> </v-col>
+            <v-col> <h3>{{ userDetail.cost +' / ชั่วโมง' }}</h3> </v-col>
             <v-spacer></v-spacer>
 
             <v-btn class="mx-3" small @click="dropAmount()">-</v-btn>
             <h3>{{ this.amount }}</h3>
             <v-btn class="mx-3" small @click="addAmount()">+</v-btn>
           </v-row>
-          <v-row class="py-4"><h3>ราคาทั้งหมด :</h3> </v-row>
+          <v-row class="py-4"><h3>{{'ราคาทั้งหมด : '+ getTotalCost }} </h3> </v-row>
 
           <v-row class="pt-6 px-4">
             <v-btn large color="green" dark>Chat</v-btn>
@@ -82,14 +82,18 @@
 export default {
   data() {
     return {
+      amount: 1,
       games: [
         { title: "Apex Legends" },
         { title: "Valorant" },
         { title: "Genshin impact" },
       ],
-      computed: {},
-      cost: 50,
-      amount: 1,
+      userDetail:{
+        name: "Pekora",
+        profilePicture: 'https://www.online-station.net/wp-content/uploads/2020/12_1/05-1200x630-4.jpg',
+        intro: 'สวัสดีจ้า เจ้าพวกแครอททั้งหลายสวัสดีจ้า เจ้าพวกแครอททั้งหลายสวัสดีจ้า เจ้าพวกแครอททั้งหลายสวัสดีจ้า เจ้าพวกแครอททั้งหลายสวัสดีจ้า เจ้าพวกแครอทท',
+        cost: 50,
+      },
       items: [
         {
           src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg",
@@ -105,6 +109,11 @@ export default {
         },
       ],
     };
+  },
+  computed: {
+    getTotalCost() {
+      return this.userDetail.cost*this.amount
+    }
   },
   methods: {
     addAmount() {
