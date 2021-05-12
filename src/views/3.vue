@@ -1,7 +1,10 @@
 <template>
   <v-container fluid>
+    
+    <v-row class="ma-auto" align="center" col="1">
+    <v-card class="pa-5" width="900">
     <v-row>
-      <v-col cols="12">
+      <v-col cols="16">
         แนะนำตัว
         <v-text-field
           placeholder="แนะนำตัวดิ"
@@ -10,13 +13,14 @@
         ></v-text-field>
       </v-col>
     </v-row>
+
     <v-row>
-      <v-col cols="auto">
+      <v-col cols="2">
         <v-card class="pa-2" cols="auto" tile>
           ราคา
         </v-card>
       </v-col>
-      <v-col cols="1">
+      <v-col cols="2">
         <v-text-field outlined height="50"></v-text-field>
       </v-col>
       <v-col cols="auto">
@@ -39,10 +43,16 @@
       </v-col>
     </v-row>
 
-    <v-row>
-      <v-btn alight="right" color="success">ยืนยัน</v-btn>
+    <v-row align="end">
+      <v-col align="end">
+      <v-btn  alight="right" color="success">ยืนยัน</v-btn>
+        
+      </v-col>
+    </v-row>
+    </v-card>
     </v-row>
   </v-container>
+  
 </template>
 
 <script>
