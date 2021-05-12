@@ -68,11 +68,8 @@ export default {
         path: "/2",
       },
       { title: "3", icon: "mdi-test-tube", path: "/3" },
-<<<<<<< Updated upstream
       { title: "4", icon: "mdi-test-tube", path: "/4" },
-=======
       { title: "5", icon: "mdi-fridge", path: "/5" },
->>>>>>> Stashed changes
       { title: "เข้าสู่ระบบ", icon: "mdi-test-tube", path: "/signin" },
       { title: "ลงทะเบียน", icon: "mdi-test-tube", path: "/signup" },
     ],
