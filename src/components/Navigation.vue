@@ -69,6 +69,7 @@ export default {
       },
       { title: "3", icon: "mdi-test-tube", path: "/3" },
       { title: "4", icon: "mdi-test-tube", path: "/4" },
+      { title: "5", icon: "mdi-fridge", path: "/5" },
       { title: "เข้าสู่ระบบ", icon: "mdi-test-tube", path: "/signin" },
       { title: "ลงทะเบียน", icon: "mdi-test-tube", path: "/signup" },
     ],
@@ -85,4 +86,3 @@ export default {
   components: {},
 };
 </script>
-

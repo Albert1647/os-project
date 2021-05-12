@@ -68,6 +68,11 @@ const routes = [
     path: '/4',
     name: '4',
     component: () => import('../views/4.vue')
+  },{
+    // Test Purpose, Deleter later
+    path: '/5',
+    name: '5',
+    component: () => import('../views/5.vue')
   },
 
 ]
