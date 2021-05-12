@@ -116,6 +116,9 @@ export default {
     selection: 1,
     colors: ["primary", "secondary", "yellow darken-2", "red", "orange"],
   }),
+  created(){
+
+  },
 
   methods: {
     reserve() {
@@ -123,6 +126,7 @@ export default {
 
       setTimeout(() => (this.loading = false), 2000);
     },
+    
   },
 };
 </script>

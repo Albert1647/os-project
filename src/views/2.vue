@@ -6,7 +6,7 @@
         <v-col cols="12" sm="4" class="pa-10">
           <v-card max-width="500" max-height="500">
             <v-img
-              src="https://www.online-station.net/wp-content/uploads/2020/12_1/05-1200x630-4.jpg"
+              :src="userDetail.profilePicture"
               width="500"
               height="500"
             ></v-img>
@@ -20,9 +20,7 @@
           </v-card>
           <v-card class="my-4" width="700" height="600">
             <v-card-text>
-              สวัสดีจ้า เจ้าพวกแครอททั้งหลาย สวัสดีจ้า
-              เจ้าพวกแครอททั้งหลายสวัสดีจ้า เจ้าพวกแครอททั้งหลายสวัสดีจ้า
-              เจ้าพวกแครอททั้งหลายสวัสดีจ้า เจ้าพวกแครอททั้งหลาย
+              {{ userDetail.intro }}
             </v-card-text>
           </v-card>
         </v-col>
@@ -30,3 +28,22 @@
     </v-card>
   </v-container>
 </template>
+
+<script>
+export default {
+  name: "userProfile",
+  data: () => ({
+    userDetail:{
+      profilePicture: 'https://www.online-station.net/wp-content/uploads/2020/12_1/05-1200x630-4.jpg',
+      name: 'Pekora',
+      intro: 'สวัสดีจ้า เจ้าพวกแครอททั้งหลายสวัสดีจ้า เจ้าพวกแครอททั้งหลายสวัสดีจ้า เจ้าพวกแครอททั้งหลายสวัสดีจ้า เจ้าพวกแครอททั้งหลายสวัสดีจ้า เจ้าพวกแครอททั้งหลาย',
+    },
+  }),
+    
+  created() {
+
+  },
+
+
+}
+</script>

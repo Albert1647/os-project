@@ -15,7 +15,6 @@
             ></v-textarea>
           </v-col>
         </v-row>
-
         <v-row>
           <v-col cols="16">
             ค่าขนม (บาท/ชั่วโมง)
