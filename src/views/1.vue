@@ -1,4 +1,3 @@
-
 <template>
   <v-container>
     <v-carousel class="px-1" v-model="model">
@@ -14,7 +13,7 @@
     <!-- Games -->
     <v-card class="my-8" height="140">
       <v-row>
-        <v-list v-for="item in items" :key="item.src" >
+        <v-list v-for="item in items" :key="item.src">
           <v-list-item-avatar class="mx-8" size="100">
             <v-img :src="item.src"> </v-img>
           </v-list-item-avatar>
@@ -25,11 +24,8 @@
     <!-- Cards -->
     <v-row>
       <v-col v-for="card in cards" :key="card.title" :cols="3">
-        <v-card  class="mx-auto my-2" max-width="400">
-          <v-img
-            height="250"
-            :src="card.src"
-          ></v-img>
+        <v-card class="mx-auto my-2" max-width="400">
+          <v-img height="250" :src="card.src"></v-img>
 
           <v-card-title>{{ card.title }}}</v-card-title>
 
@@ -64,33 +60,31 @@
 <script>
 export default {
   data: () => ({
-    
     cards: [
-     {
-         title: "PEKO",
-         src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
-     },
-     {
-         title: "PEKO",
-         src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
-     },
-     {
-         title: "PEKO",
-         src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
-     },
-     {
-         title: "PEKO",
-         src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
-     },
-     {
-         title: "PEKO",
-         src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
-     },
-     {
-         title: "PEKO",
-         src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
-     },
-     
+      {
+        title: "PEKO",
+        src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
+      },
+      {
+        title: "PEKO",
+        src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
+      },
+      {
+        title: "PEKO",
+        src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+      },
+      {
+        title: "PEKO",
+        src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
+      },
+      {
+        title: "PEKO",
+        src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
+      },
+      {
+        title: "PEKO",
+        src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+      },
     ],
     items: [
       {
