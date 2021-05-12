@@ -65,9 +65,15 @@ const routes = [
   },
   {
     // Test Purpose, Deleter later
+<<<<<<< Updated upstream
     path: '/4',
     name: '4',
     component: () => import('../views/4.vue')
+=======
+    path: '/5',
+    name: '5',
+    component: () => import('../views/5.vue')
+>>>>>>> Stashed changes
   },
 
 ]
