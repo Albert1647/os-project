@@ -21,7 +21,10 @@
                     width="700"
                     height="320"
                 >
-                    <v-card-subtitle>
+                    <v-card-subtitle
+                        class="display-1"
+
+                    >
                         สวัสดีครับเราเคยรู้จักกันหรือเปล่า
       </v-card-subtitle>
 
