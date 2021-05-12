@@ -1,7 +1,6 @@
 <template>
   <v-container fluid>
-    
-    <v-row class="ma-auto" align="center" col="1">
+    <v-card class="pa-2" align="center" elevation="0">
     <v-card class="pa-5" width="900">
     <v-row>
       <v-col cols="16">
@@ -50,7 +49,7 @@
       </v-col>
     </v-row>
     </v-card>
-    </v-row>
+    </v-card>
   </v-container>
   
 </template>
