@@ -74,7 +74,7 @@
               v-on="on"
               width="150"
               height="50"
-              class="ma-2 "
+              class="align-center ma-2 mt-1 ml-16"
               >ใบเสร็จ</v-btn
             >
           </template>
