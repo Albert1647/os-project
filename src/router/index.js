@@ -63,6 +63,12 @@ const routes = [
     name: '3',
     component: () => import('../views/3.vue')
   },
+  {
+    // Test Purpose, Deleter later
+    path: '/4',
+    name: '4',
+    component: () => import('../views/4.vue')
+  },
 
 ]
 

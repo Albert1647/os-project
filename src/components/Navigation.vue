@@ -68,6 +68,7 @@ export default {
         path: "/2",
       },
       { title: "3", icon: "mdi-test-tube", path: "/3" },
+      { title: "4", icon: "mdi-test-tube", path: "/4" },
       { title: "เข้าสู่ระบบ", icon: "mdi-test-tube", path: "/signin" },
       { title: "ลงทะเบียน", icon: "mdi-test-tube", path: "/signup" },
     ],
