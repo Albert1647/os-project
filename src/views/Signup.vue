@@ -34,13 +34,7 @@
 
           <label for="image">image</label>
           <div class="input">
-            <v-file-input
-              accept="image/*"
-              multiple
-              show-size
-              label="Select Images"
-              @change="selectFiles"
-            ></v-file-input>
+            <Upload/>
           </div>
           <div class="submit">
             <button type="submit">Submit</button>
@@ -52,11 +46,14 @@
 </template>
 
 <script>
-// import UploadService from "./services/UploadFilesService";
+import Upload from '../components/Upload'
 
 export default {
-  
-  
+
+  components: {
+    Upload,
+  },
+
   data() {
     return {
   
