@@ -79,6 +79,7 @@ export default new Vuex.Store({
         })
         
         dispatch('setLogoutTimer', res.data.expiresIn )
+        router.replace('/Homepage')
       })
         .catch(error => console.log(error))
     },

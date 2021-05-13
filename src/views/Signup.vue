@@ -71,7 +71,6 @@ export default {
       const formData = {
         email: this.email,
         password: this.password,
-        confirmPassword: this.confirmPassword,
         Introduction: this.Introduction,
         
       };

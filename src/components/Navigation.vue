@@ -3,7 +3,7 @@
     <v-app-bar app color="white" outlined elevation="1">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-btn to="/main"><v-icon medium>mdi-home</v-icon></v-btn>
+      <v-btn to="/Homepage"><v-icon medium>mdi-home</v-icon></v-btn>
       <v-btn>sss</v-btn>
       <v-spacer></v-spacer>
       <v-btn>sss</v-btn>
@@ -24,7 +24,26 @@
 
       <v-list nav>
         <v-list-item-group mandatory color="red darken-4">
+
+          <div v-if="auth">
           <v-list-item
+            v-for="item in authitems"
+            :key="item.title"
+            router
+            :to="item.path"
+          >
+            <!-- icon & name-->
+            <v-list-item-icon>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          </div>
+
+          <div v-else>
+            <v-list-item
             v-for="item in items"
             :key="item.title"
             router
@@ -38,6 +57,7 @@
               <v-list-item-title>{{ item.title }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
+          </div>
 
           <v-list-item>
             <v-list-item-title @click="onLogout">Logout</v-list-item-title>
@@ -54,24 +74,50 @@
 export default {
   name: "Navigation",
 
+  computed: {
+      auth () {
+        return this.$store.getters.isAuthenticated
+      }
+    },
+
+
   data: () => ({
+    
     drawer: true,
     logo: 'https://www.online-station.net/wp-content/uploads/2020/12_1/05-1200x630-4.jpg',
     items: [
       // { title: "ปฏิทิน", icon: "mdi-calendar", path: "/calendar" },
       // { title: "สมาชิก", icon: "mdi-account-edit", path: "/members" },
       // { title: "บทความ", icon: "mdi-newspaper", path: "/content" },
-      { title: "Homepage", icon: "mdi-star-four-points", path: "/homepage" },
+      // { title: "Homepage", icon: "mdi-star-four-points", path: "/homepage",  },
+      // {
+      //   title: "User Profile",
+      //   icon: "mdi-star-three-points",
+      //   path: "/userprofile",
+        
+      // },
+      // { title: "Register Member", icon: "mdi-test-tube", path: "/registermember", },
+      // { title: "Purchase Member", icon: "mdi-test-tube", path: "/buyMember", },
+      // { title: "Transaction", icon: "mdi-fridge", path: "/transaction", },
+      { title: "Sign in", icon: "mdi-test-tube", path: "/signin", },
+      { title: "Sign up", icon: "mdi-test-tube", path: "/signup", },
+    ],
+    authitems: [
+      // { title: "ปฏิทิน", icon: "mdi-calendar", path: "/calendar" },
+      // { title: "สมาชิก", icon: "mdi-account-edit", path: "/members" },
+      // { title: "บทความ", icon: "mdi-newspaper", path: "/content" },
+      { title: "Homepage", icon: "mdi-star-four-points", path: "/homepage",  },
       {
         title: "User Profile",
         icon: "mdi-star-three-points",
         path: "/userprofile",
+        
       },
-      { title: "Register Member", icon: "mdi-test-tube", path: "/registermember" },
-      { title: "Purchase Member", icon: "mdi-test-tube", path: "/buyMember" },
-      { title: "Transaction", icon: "mdi-fridge", path: "/transaction" },
-      { title: "Sign in", icon: "mdi-test-tube", path: "/signin" },
-      { title: "Sign up", icon: "mdi-test-tube", path: "/signup" },
+      { title: "Register Member", icon: "mdi-test-tube", path: "/registermember", },
+      { title: "Purchase Member", icon: "mdi-test-tube", path: "/buyMember", },
+      { title: "Transaction", icon: "mdi-fridge", path: "/transaction", },
+      // { title: "Sign in", icon: "mdi-test-tube", path: "/signin", },
+      // { title: "Sign up", icon: "mdi-test-tube", path: "/signup", },
     ],
     select: 1,
   }),
