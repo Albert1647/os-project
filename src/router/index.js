@@ -47,32 +47,32 @@ const routes = [
   },
   {
     // Test Purpose, Deleter later
-    path: '/1',
-    name: '1',
-    component: () => import('../views/1.vue')
+    path: '/homepage',
+    name: 'Homepage',
+    component: () => import('../views/Homepage.vue')
   },
   {
     // Test Purpose, Deleter later
-    path: '/2',
-    name: '2',
-    component: () => import('../views/2.vue')
+    path: '/userprofile',
+    name: 'userProfile',
+    component: () => import('../views/userProfile.vue')
   },
   {
     // Test Purpose, Deleter later
-    path: '/3',
-    name: '3',
-    component: () => import('../views/3.vue')
+    path: '/registermember',
+    name: 'registerMember',
+    component: () => import('../views/registerMember.vue')
   },
   {
     // Test Purpose, Deleter later
-    path: '/4',
-    name: '4',
-    component: () => import('../views/4.vue')
+    path: '/buyMember',
+    name: 'buyMember',
+    component: () => import('../views/buyMember.vue')
   },{
     // Test Purpose, Deleter later
-    path: '/5',
-    name: '5',
-    component: () => import('../views/5.vue')
+    path: '/transaction',
+    name: 'transaction',
+    component: () => import('../views/transaction.vue')
   },
 
 ]

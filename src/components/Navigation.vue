@@ -12,11 +12,11 @@
     <v-navigation-drawer v-model="drawer" app>
       <!-- NumEiang Icon & Title -->
       <v-list-item class="py-2">
-        <v-avatar size="50" color="red">
-          <!-- <img src="src" alt="alt"> -->
+        <v-avatar size="50">
+          <v-img :src="logo" alt="alt"></v-img>
         </v-avatar>
         <v-list-item-content class="px-5">
-          <v-list-item-title class="app-name"> น่ำเอี๊ยง </v-list-item-title>
+          <v-list-item-title class="app-name"> Project V </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
@@ -56,22 +56,22 @@ export default {
 
   data: () => ({
     drawer: true,
+    logo: 'https://www.online-station.net/wp-content/uploads/2020/12_1/05-1200x630-4.jpg',
     items: [
       { title: "ปฏิทิน", icon: "mdi-calendar", path: "/calendar" },
       { title: "สมาชิก", icon: "mdi-account-edit", path: "/members" },
       { title: "บทความ", icon: "mdi-newspaper", path: "/content" },
-      { title: "Homepage", icon: "mdi-star-four-points", path: "/Homepage" },
-      { title: "1", icon: "mdi-star-four-points", path: "/1" },
+      { title: "Homepage", icon: "mdi-star-four-points", path: "/homepage" },
       {
-        title: "2",
+        title: "User Profile",
         icon: "mdi-star-three-points",
-        path: "/2",
+        path: "/userprofile",
       },
-      { title: "3", icon: "mdi-test-tube", path: "/3" },
-      { title: "4", icon: "mdi-test-tube", path: "/4" },
-      { title: "5", icon: "mdi-fridge", path: "/5" },
-      { title: "เข้าสู่ระบบ", icon: "mdi-test-tube", path: "/signin" },
-      { title: "ลงทะเบียน", icon: "mdi-test-tube", path: "/signup" },
+      { title: "Register Member", icon: "mdi-test-tube", path: "/registermember" },
+      { title: "Purchase Member", icon: "mdi-test-tube", path: "/buyMember" },
+      { title: "Transaction", icon: "mdi-fridge", path: "/transaction" },
+      { title: "Sign in", icon: "mdi-test-tube", path: "/signin" },
+      { title: "Signup", icon: "mdi-test-tube", path: "/signup" },
     ],
     select: 1,
   }),

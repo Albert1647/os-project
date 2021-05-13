@@ -15,7 +15,7 @@
         <v-col class="pt-10">
           <v-card max-width="700">
             <v-card-title>
-              Pekora
+              {{ userDetail.name }}
             </v-card-title>
           </v-card>
           <v-card class="my-4" width="700" height="600">
