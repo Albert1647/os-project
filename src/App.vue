@@ -3,15 +3,13 @@
     <!-- <Drawer :navTitle="currentRouteName"/> -->
     <!-- <Appbar/> -->
     <Navigation :navTitle="currentRouteName" />
-    <v-main >
-      <v-container fluid style="height: 100vh" >
+    <v-main  >
+      <v-card color="#f6fafd" rounded="0" min-height="1000" >
+      <v-container fluid  >
         <router-view></router-view>
-        <v-row >
-          <v-col>
-            <Footer />
-          </v-col>
-        </v-row>
       </v-container>
+      <Footer />
+      </v-card>
     </v-main>
   </v-app>
 </template>

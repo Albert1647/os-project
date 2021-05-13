@@ -58,9 +58,9 @@ export default {
     drawer: true,
     logo: 'https://www.online-station.net/wp-content/uploads/2020/12_1/05-1200x630-4.jpg',
     items: [
-      { title: "ปฏิทิน", icon: "mdi-calendar", path: "/calendar" },
-      { title: "สมาชิก", icon: "mdi-account-edit", path: "/members" },
-      { title: "บทความ", icon: "mdi-newspaper", path: "/content" },
+      // { title: "ปฏิทิน", icon: "mdi-calendar", path: "/calendar" },
+      // { title: "สมาชิก", icon: "mdi-account-edit", path: "/members" },
+      // { title: "บทความ", icon: "mdi-newspaper", path: "/content" },
       { title: "Homepage", icon: "mdi-star-four-points", path: "/homepage" },
       {
         title: "User Profile",
@@ -71,7 +71,7 @@ export default {
       { title: "Purchase Member", icon: "mdi-test-tube", path: "/buyMember" },
       { title: "Transaction", icon: "mdi-fridge", path: "/transaction" },
       { title: "Sign in", icon: "mdi-test-tube", path: "/signin" },
-      { title: "Signup", icon: "mdi-test-tube", path: "/signup" },
+      { title: "Sign up", icon: "mdi-test-tube", path: "/signup" },
     ],
     select: 1,
   }),

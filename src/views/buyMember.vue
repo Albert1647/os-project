@@ -5,7 +5,7 @@
       <!-- Left top card -->
       <v-col cols="5" class="pr-12">
         <v-card class="align-end pa-2 mr-5 mb-5" height="450" width="600">
-          <v-row class="d-flex align-center">
+          <v-row class="d-flex align-center pa-2 pl-5">
             <v-list>
               <v-list-item-avatar size="80">
                 <v-img :src="userDetail.profilePicture"></v-img>
@@ -44,25 +44,89 @@
           class="pa-6 mr-5 mb-5"
           height="350"
           max-height="350"
-          width="600"
+          width="800"
         >
-          <v-row class="py-4"
-            ><v-card-title>สนับสนุนค่าขนมของเราได้ที่นี่</v-card-title></v-row
+          <v-row class="py-4">
+            <v-card-title>สนับสนุนค่าขนมของเราได้ที่นี่</v-card-title></v-row
           >
           <v-row class="py-4 align-center">
-            <v-col> <h3>{{ userDetail.cost +' / ชั่วโมง' }}</h3> </v-col>
+            <v-col>
+              <h3>{{ userDetail.cost + " / ชั่วโมง" }}</h3>
+            </v-col>
             <v-spacer></v-spacer>
 
             <v-btn class="mx-3" small @click="dropAmount()">-</v-btn>
             <h3>{{ this.amount }}</h3>
             <v-btn class="mx-3" small @click="addAmount()">+</v-btn>
           </v-row>
-          <v-row class="py-4"><h3>{{'ราคาทั้งหมด : '+ getTotalCost }} </h3> </v-row>
+          <v-row class="py-4"
+            ><h3>{{ "ราคาทั้งหมด : " + getTotalCost }}</h3>
+          </v-row>
 
           <v-row class="pt-6 px-4">
-            <v-btn large color="green" dark>Chat</v-btn>
+            <v-btn
+                  color="green"
+                  dark
+                  width="150"
+                  height="50"
+                  class="align-center ma-2 mt-3 ml-16"
+            >แชทเลย</v-btn
+                >
 
-            <v-btn large>ซื้อตั๋ว</v-btn>
+            <v-dialog transition="dialog-top-transition" max-width="800">
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  color="primary"
+                  v-bind="attrs"
+                  v-on="on"
+                  width="150"
+                  height="50"
+                  class="align-center ma-2 mt-3 ml-16"
+                  >ซื้อตั๋ว</v-btn
+                >
+              </template>
+              <!-- dialog -->
+              <template v-slot:default="dialog">
+                <v-card class="px-5">
+                  <v-row class="d-flex align-center pa-2 pl-5">
+                    <v-list>
+                      <v-list-item-avatar size="80">
+                        <v-img :src="userDetail.profilePicture"></v-img>
+                      </v-list-item-avatar>
+                    </v-list>
+
+                    <v-col>
+                      <h1>{{ userDetail.name }}</h1>
+                    </v-col>
+                  </v-row>
+                  <v-container class="pa-5">
+                    <v-row>
+                      <h3>{{ userDetail.cost + " / ชั่วโมง" }}</h3>
+                    </v-row>
+                    <v-row class="py-4"
+                      ><h3>{{ "จำนวน : " + "5" + " ชั่วโมง" }}</h3>
+                    </v-row>
+                    <v-row class="py-4"
+                      ><h3>{{ "ราคาทั้งหมด : " + getTotalCost }}</h3>
+                    </v-row>
+                  </v-container>
+                  <v-divider class="pt-5 pb-5"></v-divider>
+                  <h2>อัพโหลดรูปภาพการชำระเงิน</h2>
+                  <v-file-input truncate-length="15"></v-file-input>
+                  <v-card-actions class="justify-end">
+                    <v-btn
+                      color="error"
+                      dark
+                      large
+                      @click="dialog.value = false"
+                    >
+                      Cancel
+                    </v-btn>
+                    <v-btn color="success" dark large> Confirm</v-btn>
+                  </v-card-actions>
+                </v-card>
+              </template>
+            </v-dialog>
           </v-row>
         </v-card>
         <!-- Right Bot Card -->
@@ -88,10 +152,12 @@ export default {
         { title: "Valorant" },
         { title: "Genshin impact" },
       ],
-      userDetail:{
+      userDetail: {
         name: "Pekora",
-        profilePicture: 'https://www.online-station.net/wp-content/uploads/2020/12_1/05-1200x630-4.jpg',
-        intro: 'สวัสดีจ้า เจ้าพวกแครอททั้งหลายสวัสดีจ้า เจ้าพวกแครอททั้งหลายสวัสดีจ้า เจ้าพวกแครอททั้งหลายสวัสดีจ้า เจ้าพวกแครอททั้งหลายสวัสดีจ้า เจ้าพวกแครอทท',
+        profilePicture:
+          "https://www.online-station.net/wp-content/uploads/2020/12_1/05-1200x630-4.jpg",
+        intro:
+          "สวัสดีจ้า เจ้าพวกแครอททั้งหลายสวัสดีจ้า เจ้าพวกแครอททั้งหลายสวัสดีจ้า เจ้าพวกแครอททั้งหลายสวัสดีจ้า เจ้าพวกแครอททั้งหลายสวัสดีจ้า เจ้าพวกแครอทท",
         cost: 50,
       },
       items: [
@@ -112,8 +178,8 @@ export default {
   },
   computed: {
     getTotalCost() {
-      return this.userDetail.cost*this.amount
-    }
+      return this.userDetail.cost * this.amount;
+    },
   },
   methods: {
     addAmount() {
@@ -122,7 +188,7 @@ export default {
     dropAmount() {
       if (this.amount > 1) {
         return this.amount--;
-      } else return this.amount = 1;
+      } else return (this.amount = 1);
     },
   },
 };
